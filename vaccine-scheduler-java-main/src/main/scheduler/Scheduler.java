@@ -28,17 +28,17 @@ public class Scheduler {
         System.out.println();
         System.out.println("Welcome to the COVID-19 Vaccine Reservation Scheduling Application!");
         System.out.println("*** Please enter one of the following commands ***");
-        System.out.println("> create_patient <username> <password>");  //TODO: implement create_patient (Part 1)
+        System.out.println("> create_patient <username> <password>"); 
         System.out.println("> create_caregiver <username> <password>");
-        System.out.println("> login_patient <username> <password>");  // TODO: implement login_patient (Part 1)
+        System.out.println("> login_patient <username> <password>"); 
         System.out.println("> login_caregiver <username> <password>");
-        System.out.println("> search_caregiver_schedule <date>");  // TODO: implement search_caregiver_schedule (Part 2)
-        System.out.println("> reserve <date> <vaccine>");  // TODO: implement reserve (Part 2)
+        System.out.println("> search_caregiver_schedule <date>"); 
+        System.out.println("> reserve <date> <vaccine>"); 
         System.out.println("> upload_availability <date>");
-        System.out.println("> cancel <appointment_id>");  // TODO: implement cancel (extra credit)
+        System.out.println("> cancel <appointment_id>"); 
         System.out.println("> add_doses <vaccine> <number>");
-        System.out.println("> show_appointments");  // TODO: implement show_appointments (Part 2)
-        System.out.println("> logout");  // TODO: implement logout (Part 2)
+        System.out.println("> show_appointments");
+        System.out.println("> logout"); 
         System.out.println("> quit");
         System.out.println();
 
@@ -93,8 +93,6 @@ public class Scheduler {
     }
 
     private static void createPatient(String[] tokens) {
-        // TODO: Part 1
-        // create_patient <username> <password>
         // check 1: the length for tokens need to be exactly 3 to include all information (with the operation name)
         if (tokens.length != 3) {
             System.out.println("Failed to create user.");
@@ -197,7 +195,6 @@ public class Scheduler {
     }
 
     private static void loginPatient(String[] tokens) {
-        // TODO: Part 1
         // login_patient <username> <password>
         // check 1: if someone's already logged-in, they need to log out first
         if (currentCaregiver != null || currentPatient != null) {
@@ -260,7 +257,6 @@ public class Scheduler {
     }
 
     private static void searchCaregiverSchedule(String[] tokens) {
-        // TODO: Part 2
         if (currentCaregiver == null && currentPatient == null ) {
             System.out.println("Please login first!");
             return;
@@ -306,7 +302,6 @@ public class Scheduler {
     }
 
     private static void reserve(String[] tokens) {
-        // TODO: Part 2
         if (currentCaregiver == null && currentPatient == null) {
             System.out.println("Please login first!");//no one login
             return;
@@ -409,7 +404,6 @@ public class Scheduler {
     }
 
     private static void cancel(String[] tokens) {
-        // TODO: Extra credit
         if (currentCaregiver == null && currentPatient == null ) {
             System.out.println("Please login first!");
             return;
@@ -531,7 +525,6 @@ public class Scheduler {
     }
 
     private static void showAppointments(String[] tokens) {
-        // TODO: Part 2
         if (currentCaregiver == null && currentPatient == null) {
             System.out.println("Please login first!");
             return;
@@ -579,7 +572,6 @@ public class Scheduler {
     }
 
     private static void logout(String[] tokens) {
-        // TODO: Part 2
         if (currentCaregiver == null && currentPatient == null) {
             System.out.println("Please login first.");
             return;
